@@ -1,0 +1,14 @@
+<div>
+  <form [formGroup]="usernameForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username"> Usuário Github: </label>
+      <input id="username" type="text" formControlName="username" />
+      <button class="button" type="submit">buscar</button>
+    </div>
+  </form>
+
+  <div *ngFor="let user of users">
+    <span (click)="handleDetail(user)">{{ user.login }} </span>
+    <button (click)="handleDelete(user.id)">Excluir</button>
+  </div>
+</div>
