@@ -1,36 +1,12 @@
-<div>
-  <p>Detalhes do usuário!</p>
+<div class="container">
+  <h1 class="text-center">Detalhes do usuário</h1>
 
-  login: {{ user.login }}<br />
-  id: {{ user.id }}<br />
-  node_id: {{ user.node_id }}<br />
-  avatar_url: {{ user.avatar_url }}<br />
-  gravatar_id: {{ user.gravatar_id }}<br />
-  url: {{ user.url }}<br />
-  html_url: {{ user.html_url }}<br />
-  followers_url: {{ user.followers_url }}<br />
-  following_url: {{ user.following_url }}<br />
-  gists_url: {{ user.gists_url }}<br />
-  starred_url: {{ user.starred_url }}<br />
-  subscriptions_url: {{ user.subscriptions_url }}<br />
-  organizations_url: {{ user.organizations_url }}<br />
-  repos_url: {{ user.repos_url }}<br />
-  events_url: {{ user.events_url }}<br />
-  received_events_url: {{ user.received_events_url }}<br />
-  type: {{ user.type }}<br />
-  site_admin: {{ user.site_admin }}<br />
-  name: {{ user.name }}<br />
-  company: {{ user.company }}<br />
-  blog: {{ user.blog }}<br />
-  location: {{ user.location }}<br />
-  email: {{ user.email }}<br />
-  hireable: {{ user.hireable }}<br />
-  bio: {{ user.bio }}<br />
-  twitter_username: {{ user.twitter_username }}<br />
-  public_repos: {{ user.public_repos }}<br />
-  public_gists: {{ user.public_gists }}<br />
-  followers: {{ user.followers }}<br />
-  following: {{ user.following }}<br />
-  created_at: {{ user.created_at }}<br />
-  updated_at: {{ user.updated_at }}<br />
+  <div class="card p-3 mb-3">
+    <div *ngFor="let item of user | keyvalue">
+      {{ item.key }}: {{ item.value }}
+    </div>
+  </div>
+
+  <h1 class="text-center">Localização do usuário</h1>
+  <div id="map" leaflet></div>
 </div>

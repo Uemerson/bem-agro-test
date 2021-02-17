@@ -4,6 +4,7 @@ import { User } from '../../core/models/user';
 import { FormBuilder } from '@angular/forms';
 import { UserService } from '../../core/services/user.service';
 import { Router } from '@angular/router';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-users',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
   users: User[] = [];
+  faTrash = faTrash;
 
   usernameForm = this.formBuilder.group({
     username: '',

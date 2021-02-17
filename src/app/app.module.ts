@@ -7,11 +7,13 @@ import { UsersComponent } from './modules/users/users.component';
 import { UserComponent } from './modules/user/user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent, UsersComponent, UserComponent],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,14 +1,29 @@
-<div>
+<div class="container">
   <form [formGroup]="usernameForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="username"> Usuário Github: </label>
-      <input id="username" type="text" formControlName="username" />
-      <button class="button" type="submit">buscar</button>
+    <div class="form-group">
+      <label for="username">Usuário Github</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        formControlName="username"
+        aria-describedby="usernameHelp"
+        placeholder="Entre com usuário do github"
+      />
     </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
   </form>
 
-  <div *ngFor="let user of users">
-    <span (click)="handleDetail(user)">{{ user.login }} </span>
-    <button (click)="handleDelete(user.id)">Excluir</button>
+  <div class="list-group" *ngFor="let user of users">
+    <div
+      class="list-group-item d-flex justify-content-between align-items-center mb-2"
+    >
+      <span (click)="handleDetail(user)" style="cursor: pointer"
+        >{{ user.login }}
+      </span>
+      <button (click)="handleDelete(user.id)" class="btn btn-danger">
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </button>
+    </div>
   </div>
 </div>
